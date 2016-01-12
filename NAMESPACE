@@ -86,7 +86,10 @@ importFrom(stats,
        end, 
        frequency, 
        time, 
-       window)
+       window,
+       pnorm, 
+       printCoefmat, 
+       ts)
 importFrom(stats4, 
        coef, 
        confint, 
@@ -95,12 +98,15 @@ importFrom(stats4,
        update,
        plot)
 importFrom(methods, 
-       show)
+       show,
+       as,
+       new)
 importFrom(utils, 
        stack, 
        str, 
        head, 
-       tail)
+       tail,
+       read.table)
 importFrom(graphics, 
        pairs)
 importFrom(lattice, 
