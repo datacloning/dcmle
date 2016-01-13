@@ -1,5 +1,5 @@
 export(dcmle, .dcmle, makeGsFit, makeDcFit,
-    listDcExamples, sourceDcExample, as.mcmc.list)
+    listDcExamples, sourceDcExample)
 
 exportMethods(
     "[",
@@ -7,7 +7,7 @@ exportMethods(
     "acfplot",
     "as.array",
     "as.matrix",
-    #"as.mcmc.list",
+    "as.mcmc.list",
     "autocorr.diag",
     "chanames",
     "chisq.diag",
@@ -147,7 +147,7 @@ importFrom(dclone,
        mclapplySB,
        evalParallelArgument)
 importFrom(coda,
-       #as.mcmc.list,
+       as.mcmc.list,
        mcmc,
        is.mcmc.list,
        mcmc.list,
@@ -170,3 +170,4 @@ importFrom(coda,
        niter,
        nvar)
 importFrom(rjags)
+S3method(as.mcmc.list, default)

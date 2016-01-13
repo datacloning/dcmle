@@ -1,13 +1,3 @@
-## problematic as.mcmc.list redefined here
-
-#setGeneric("as.mcmc.list",function(x) standardGeneric("as.mcmc.list"))
-#setMethod("as.mcmc.list", signature(x = "ANY"),
-#    function (x, ...)
-#        if (is.mcmc.list(x)) x else mcmc.list(x))
-as.mcmc.list <- function (x, ...)
-        if (is.mcmc.list(x)) x else mcmc.list(x)
-## S3method(as.mcmc.list, default)
-
 ## ---------------------
 ## methods with generic defined in base
 ## ---------------------
