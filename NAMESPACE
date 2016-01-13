@@ -107,7 +107,8 @@ importFrom(utils,
        tail,
        read.table)
 importFrom(graphics,
-       pairs)
+       pairs,
+       par)
 importFrom(lattice,
        densityplot,
        qqmath,
