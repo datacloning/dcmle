@@ -1,4 +1,5 @@
 ## tests
+#devtools::install_github("datacloning/dcmle")
 
 library(dcmle)
 
@@ -9,6 +10,8 @@ as(new("dcFit"), "gsFit")
 
 ## dcmle model fit classes
 
+str(as.mcmc.list(regmod))
+str(as(regmod, "mcmc.list"))
 str(as(regmod, "MCMClist"))
 str(as(regmod, "codaMCMC"))
 str(as(regmod, "dcCodaMCMC"))
@@ -47,23 +50,47 @@ evalfun <- function(FUN) {
           paste(FUN, "(", x, ")", sep="")
           ))
     }
+    out <- rep(0L, 4)
+    names(out) <- c("MCMClist", "codaMCMC", "dcCodaMCMC", "dcmle")
+
     cat("\n\n***", FUN, "***")
+
     cat("\n\n---", FUN, "--- MCMClist ---\n")
-    ooo <- try(evalfun_int("regmod_MCMClist", FUN))
-    if (inherits(ooo, ""))
-        ooo else cat("OK\n\n")
+    ooo <- try(evalfun_int("regmod_MCMClist", FUN), silent=TRUE)
+    if (inherits(ooo, "try-error")) {
+        cat(as.character(ooo), "\n\n")
+        out[1] <- 1L
+    } else {
+        cat("OK\n\n")
+    }
+
     cat("\n\n---", FUN, "--- codaMCMC ---\n")
-    ooo <- try(evalfun_int("regmod_codaMCMC", FUN))
-    if (inherits(ooo, ""))
-        ooo else cat("OK\n\n")
+    ooo <- try(evalfun_int("regmod_codaMCMC", FUN), silent=TRUE)
+    if (inherits(ooo, "try-error")) {
+        cat(as.character(ooo), "\n\n")
+        out[2] <- 1L
+    } else {
+        cat("OK\n\n")
+    }
+
     cat("\n\n---", FUN, "--- dcCodaMCMC ---\n")
-    ooo <- try(evalfun_int("regmod_dcCodaMCMC", FUN))
-    if (inherits(ooo, ""))
-        ooo else cat("OK\n\n")
+    ooo <- try(evalfun_int("regmod_dcCodaMCMC", FUN), silent=TRUE)
+    if (inherits(ooo, "try-error")) {
+        cat(as.character(ooo), "\n\n")
+        out[3] <- 1L
+    } else {
+        cat("OK\n\n")
+    }
+
     cat("\n\n---", FUN, "--- dcmle ---\n")
-    ooo <- try(evalfun_int("regmod_dcmle", FUN))
-    if (inherits(ooo, ""))
-        ooo else cat("OK\n\n")
+    ooo <- try(evalfun_int("regmod_dcmle", FUN), silent=TRUE)
+    if (inherits(ooo, "try-error")) {
+        cat(as.character(ooo), "\n\n")
+        out[4] <- 1L
+    } else {
+        cat("OK\n\n")
+    }
+    out
 }
 #evalfun("str")
 
@@ -111,8 +138,10 @@ toEval <- c("plot",
   "raftery.diag",
   "heidel.diag")
 
-for (i in toEval)
-  evalfun(i)
+res <- list()
+for (i in toEval) {
+  res[[i]] <- evalfun(i)
+}
 
 evalfun("confint")
 attr(regmod, "n.clones") <- 2
@@ -133,4 +162,7 @@ evalfun("confint")
 ## show, summary
 ## [, [[
 
-
+do.call(rbind, res)
+evalfun("pairs")
+evalfun("window")
+evalfun("autocorr.diag")
