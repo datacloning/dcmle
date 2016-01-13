@@ -162,10 +162,12 @@ evalfun("confint")
 ## show, summary
 ## [, [[
 
-do.call(rbind, res)
+tmp <- do.call(rbind, res)
 
-colSums(do.call(rbind, res))
+colSums(tmp)
+tmp[rowSums(tmp) != 0,]
 
 evalfun("pairs")
 evalfun("window")
 evalfun("autocorr.diag")
+

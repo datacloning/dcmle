@@ -17,7 +17,7 @@ setClassUnion("nClones", c("NULL", "numeric"))
 setClassUnion("MCMClist", c("mcmc", "mcmc.list", "mcmc.list.dc"))
 
 ## this is an S4 class for mcmc.list of coda style
-setClass("codaMCMC", 
+setClass("codaMCMC",
     representation(
         values = "numeric",
         varnames = "character",
@@ -53,18 +53,18 @@ setClass("codaMCMC",
     })
 
 ## all DC info with MCMC list
-setClass("dcCodaMCMC", 
+setClass("dcCodaMCMC",
     contains = "codaMCMC",
     representation(
         dctable = "dcTable",
         dcdiag = "dcDiag",
         nclones = "nClones"))
 
-setClass("dcmle", 
+setClass("dcmle",
     representation(
         call     = "language",
         coef     = "numeric",
-        fullcoef = "numeric", 
+        fullcoef = "numeric",
         vcov     = "matrix",
         details  = "dcCodaMCMC",
         nobs     = "integer",
@@ -73,6 +73,13 @@ setClass("dcmle",
 ## ------------------
 ## COERCION METHODS
 ## ------------------
+
+## this is needed for some coda functions
+setAs(from = "mcmc.list.dc", to = "mcmc.list", def = function(from) {
+    class(from) <- "mcmc.list"
+    attr(from, "n.clones") <- NULL
+    from
+})
 
 ## coercion method (ignores any DC info)
 setAs(from = "MCMClist", to = "codaMCMC", def = function(from) {
@@ -99,7 +106,7 @@ setAs(from = "MCMClist", to = "dcCodaMCMC", def = function(from) {
     dcd <- dcdiag(from)
     if (nrow(dcd) == 1)
         rownames(dcd) <- deparse(substitute(from))
-    new("dcCodaMCMC", 
+    new("dcCodaMCMC",
         as(from, "codaMCMC"),
         dcdiag = dcd,
         dctable = dctable(from),
@@ -117,7 +124,7 @@ setAs(from = "MCMClist", to = "dcmle", def = function(from) {
     new("dcmle",
 #        call     = match.call(),
         coef     = cfs,
-        fullcoef = cfs, 
+        fullcoef = cfs,
         vcov     = vcv,
         details  = details,
         nobs     = as.integer(NA),
@@ -177,7 +184,7 @@ setAs(from = "codaMCMC", to = "dcmle", def = function(from) {
     new("dcmle",
 #        call     = match.call(),
         coef     = cfs,
-        fullcoef = cfs, 
+        fullcoef = cfs,
         vcov     = vcv,
         details  = details,
         nobs     = as.integer(NA),
@@ -194,7 +201,7 @@ setAs(from = "dcCodaMCMC", to = "dcmle", def = function(from) {
     new("dcmle",
 #        call     = match.call(),
         coef     = cfs,
-        fullcoef = cfs, 
+        fullcoef = cfs,
         vcov     = vcv,
         details  = from,
         nobs     = as.integer(NA),
