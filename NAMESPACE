@@ -1,5 +1,5 @@
 export(dcmle, .dcmle, makeGsFit, makeDcFit,
-    listDcExamples, sourceDcExample)
+    listDcExamples, sourceDcExample, as.mcmc.list)
 
 exportMethods(
     "[",
@@ -7,7 +7,7 @@ exportMethods(
     "acfplot",
     "as.array",
     "as.matrix",
-    "as.mcmc.list",
+    #"as.mcmc.list",
     "autocorr.diag",
     "chanames",
     "chisq.diag",
