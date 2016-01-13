@@ -86,10 +86,10 @@ setMethod("show", "gsFit", function(object) {
 })
 
 ## generic after coda
-setGeneric("as.mcmc.list",
-  function(x, ...)
-    standardGeneric("as.mcmc.list")
-)
+#setGeneric("as.mcmc.list",
+#  function(x, ...)
+#    standardGeneric("as.mcmc.list")
+#)
 
 ## generic after utils
 #setGeneric("stack",

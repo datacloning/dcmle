@@ -10,15 +10,8 @@ Description: S4 classes around infrastructure
     development with data cloning for hierarchical
     models easy as a breeze.
 License: GPL-2
-Depends:
-    R (>= 2.15.0),
-    dclone (>= 2.0-0),
-    rjags,
-    coda
-Imports:
-    methods,
-    stats4,
-    lattice
+Depends: R (>= 2.15.0), dclone (>= 2.0-0), rjags
+Imports: coda, methods, stats4, lattice
 Suggests:
     parallel
 SystemRequirements: JAGS (>= 3.0.0)
@@ -26,4 +19,3 @@ URL: https://groups.google.com/forum/#!forum/dclone-users,
     https://github.com/datacloning/dcmle/issues, http://datacloning.org
 LazyLoad: yes
 LazyData: true
-RoxygenNote: 5.0.1
