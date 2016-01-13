@@ -163,6 +163,9 @@ evalfun("confint")
 ## [, [[
 
 do.call(rbind, res)
+
+colSums(o.call(rbind, res))
+
 evalfun("pairs")
 evalfun("window")
 evalfun("autocorr.diag")
