@@ -3,6 +3,13 @@
 ## Version 0.3-0, Jan 12, 2016
 
     * NAMESPACE changes triggered by CRAN checks.
+    * Fixing S4 methods related Rd changes.
+    * Fixing import issue with coda::as.mcmc.list generic.
+      The coda:::as.mcmc.list.default is replicated
+      as the internal .as_mcmc_list_default function.
+    * dcexample function is defunct.
+      The R-Forge example repo is moved to:
+      https://github.com/datacloning/dcexamples
 
 ## Version 0.2-4, Sept 27, 2013
 
