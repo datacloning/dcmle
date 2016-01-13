@@ -4,6 +4,9 @@
 \alias{dcCodaMCMC-class}
 \alias{[,dcCodaMCMC-method}
 \alias{[[,dcCodaMCMC-method}
+\alias{[,codaMCMC,ANY,ANY,ANY-method}
+\alias{[,dcCodaMCMC,ANY,ANY,ANY-method}
+\alias{[,dcmle,ANY,ANY,ANY-method}
 \alias{coerce,dcCodaMCMC,dcmle-method}
 \alias{coerce,dcCodaMCMC,MCMClist-method}
 \alias{coerce,MCMClist,dcCodaMCMC-method}

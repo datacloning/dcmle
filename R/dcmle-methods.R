@@ -1,6 +1,3 @@
-.as_mcmc_list_default <- function(x, ...)
-    if (is.mcmc.list(x)) x else mcmc.list(x)
-
 ## ---------------------
 ## methods with generic defined in base
 ## ---------------------

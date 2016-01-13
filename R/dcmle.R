@@ -1,7 +1,11 @@
+## internal function to solve the as.mcmc.list misery
+.as_mcmc_list_default <- function(x, ...)
+    if (is.mcmc.list(x)) x else mcmc.list(x)
+
 ## wrapper function
 ## calls the interal .dcmle function and coerces to dcmle S4 class
 dcmle <- function(x, params, n.clones=1, cl=NULL, nobs, ...) {
-    out <- as(dcmle::.dcmle(x=x, params=params, 
+    out <- as(dcmle::.dcmle(x=x, params=params,
         n.clones=n.clones, cl=cl, nobs=nobs, ...), "dcmle")
     out@call <- match.call()
     if (!missing(nobs))
@@ -46,8 +50,8 @@ dcmle <- function(x, params, n.clones=1, cl=NULL, nobs, ...) {
             if (length(ARGS)>2)
                 stop("too long argument list for 'initsfun'")
             if (length(ARGS)==2)
-                inits <- eval(local(parse(text = paste("inits <- ", 
-                    deparse(substitute(initsfun)), "(", 
+                inits <- eval(local(parse(text = paste("inits <- ",
+                    deparse(substitute(initsfun)), "(",
                     ARGS[2], "=n.clones)", sep = ""))))
         }
         ## clone the data
@@ -61,10 +65,10 @@ dcmle <- function(x, params, n.clones=1, cl=NULL, nobs, ...) {
             }
         } else {
             out <- if (is.null(cl)) {
-                bugs.fit(dat, params, model, inits, 
+                bugs.fit(dat, params, model, inits,
                     program=PROGRAM, ...)
             } else {
-                bugs.parfit(cl, dat, params, model, inits, 
+                bugs.parfit(cl, dat, params, model, inits,
                     program=PROGRAM, ...)
             }
         }
@@ -73,9 +77,9 @@ dcmle <- function(x, params, n.clones=1, cl=NULL, nobs, ...) {
         if (FLAVOUR == "jags") {
             ## sequential execution
             if (is.null(cl)) {
-                out <- dc.fit(x@data, params, model, x@inits, 
-                    n.clones = n.clones, 
-                    multiply = x@multiply, 
+                out <- dc.fit(x@data, params, model, x@inits,
+                    n.clones = n.clones,
+                    multiply = x@multiply,
                     unchanged = x@unchanged,
                     update = x@update,
                     updatefun = x@updatefun,
@@ -83,9 +87,9 @@ dcmle <- function(x, params, n.clones=1, cl=NULL, nobs, ...) {
                     flavour = FLAVOUR, ...)
             ## parallel execution
             } else {
-                out <- dc.parfit(cl, x@data, params, model, x@inits, 
-                    n.clones = n.clones, 
-                    multiply = x@multiply, 
+                out <- dc.parfit(cl, x@data, params, model, x@inits,
+                    n.clones = n.clones,
+                    multiply = x@multiply,
                     unchanged = x@unchanged,
                     update = x@update,
                     updatefun = x@updatefun,
@@ -95,29 +99,28 @@ dcmle <- function(x, params, n.clones=1, cl=NULL, nobs, ...) {
         } else {
             ## sequential execution
             if (is.null(cl)) {
-                out <- dc.fit(x@data, params, model, x@inits, 
-                    n.clones = n.clones, 
-                    multiply = x@multiply, 
+                out <- dc.fit(x@data, params, model, x@inits,
+                    n.clones = n.clones,
+                    multiply = x@multiply,
                     unchanged = x@unchanged,
                     update = x@update,
                     updatefun = x@updatefun,
                     initsfun = x@initsfun,
-                    flavour = FLAVOUR, 
+                    flavour = FLAVOUR,
                     program = PROGRAM, ...)
             ## parallel execution
             } else {
-                out <- dc.parfit(cl, x@data, params, model, x@inits, 
-                    n.clones = n.clones, 
-                    multiply = x@multiply, 
+                out <- dc.parfit(cl, x@data, params, model, x@inits,
+                    n.clones = n.clones,
+                    multiply = x@multiply,
                     unchanged = x@unchanged,
                     update = x@update,
                     updatefun = x@updatefun,
                     initsfun = x@initsfun,
-                    flavour = FLAVOUR, 
+                    flavour = FLAVOUR,
                     program = PROGRAM, ...)
             }
         }
     }
     out
 }
-
