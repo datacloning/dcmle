@@ -24,12 +24,6 @@ model object containing MCMC results as returned by the
 These object classes are easily
 extensible to allow inclusion into functions fitting
 specific models to the data (see Examples).
-
-\code{\link{sourceDcExample}} can be used to get
-examples from \url{http://dcr.r-forge.r-project.org/examples}
-gathered from various sources (WinBUGS Manual, articles, books, etc.).
-This under continuous development, and used in the testing suite
-of the \pkg{dclone} package. Contributions of examples are welcome.
 }
 \author{
 Peter Solymos
