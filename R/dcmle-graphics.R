@@ -1,13 +1,10 @@
 ## plot methods (coda and lattice)
 
-.plot_mcmc_list <-
-function (x, trace = TRUE, density = TRUE, smooth = TRUE, bwf,
-    auto.layout = TRUE, ask = par("ask"), ...)
-{
-    .set_mfrow
-    function (Nchains = 1, Nparms = 1, nplots = 1, sepplot = FALSE)
-    {
-    mfrow <- if (sepplot && Nchains > 1 && nplots == 1) {
+.plot_mcmc_list <- function (x, trace = TRUE, density = TRUE,
+smooth = TRUE, bwf, auto.layout = TRUE, ask = par("ask"), ...) {
+    .set_mfrow <- function (Nchains = 1, Nparms = 1,
+    nplots = 1, sepplot = FALSE) {
+        mfrow <- if (sepplot && Nchains > 1 && nplots == 1) {
             if (Nchains == 2) {
                 switch(min(Nparms, 5), c(1, 2), c(2, 2), c(3, 2),
                     c(4, 2), c(3, 2))
