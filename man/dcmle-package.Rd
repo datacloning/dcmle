@@ -31,8 +31,11 @@ Peter Solymos
 Maintainer: Peter Solymos <solymos@ualberta.ca>
 }
 \references{
-\url{http://cran.r-project.org/package=dcmle}, 
-\url{http://dcr.r-forge.r-project.org}
+Forum: \url{https://groups.google.com/forum/#!forum/dclone-users}
+
+Issues: \url{https://github.com/datacloning/dcmle/issues}
+
+Datacloning website: \url{http://datacloning.org}
 }
 \keyword{ package }
 \seealso{
