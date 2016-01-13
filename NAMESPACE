@@ -147,7 +147,7 @@ importFrom(dclone,
        mclapplySB,
        evalParallelArgument)
 importFrom(coda,
-       as.mcmc.list,
+       #as.mcmc.list,
        mcmc,
        "varnames<-",
        varnames,
