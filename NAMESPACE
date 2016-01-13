@@ -11,7 +11,7 @@ exportMethods(
     "chanames",
     "chisq.diag",
     "coef",
-    "coerce",
+    #"coerce",
     "confint",
     "crosscorr.plot",
     "crosscorr",
