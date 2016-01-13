@@ -11,7 +11,7 @@ Description: S4 classes around infrastructure provided by the
 License: GPL-2
 Depends: R (>= 2.15.0), dclone (>= 2.0-0)
 Imports: coda, methods, stats4, lattice
-Suggests: parallel, rjags
+Suggests: MASS, parallel, rjags
 SystemRequirements: JAGS (>= 3.0.0)
 URL: https://groups.google.com/forum/#!forum/dclone-users,
     https://github.com/datacloning/dcmle/issues, http://datacloning.org
