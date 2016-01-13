@@ -164,7 +164,7 @@ evalfun("confint")
 
 do.call(rbind, res)
 
-colSums(o.call(rbind, res))
+colSums(do.call(rbind, res))
 
 evalfun("pairs")
 evalfun("window")
