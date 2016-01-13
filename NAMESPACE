@@ -170,4 +170,4 @@ importFrom(coda,
        niter,
        nvar)
 importFrom(rjags)
-S3method(as.mcmc.list, default)
+S3method(as.mcmc.list, default, .as_mcmc_list_default)
