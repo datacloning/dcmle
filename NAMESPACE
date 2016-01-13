@@ -7,7 +7,7 @@ exportMethods(
     "acfplot",
     "as.array",
     "as.matrix",
-    "as.mcmc.list",
+    #"as.mcmc.list",
     "autocorr.diag",
     "chanames",
     "chisq.diag",
@@ -169,5 +169,5 @@ importFrom(coda,
        nchain,
        niter,
        nvar)
-importFrom(rjags)
+#importFrom(rjags)
 S3method(as.mcmc.list, default, .as_mcmc_list_default)
