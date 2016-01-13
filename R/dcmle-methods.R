@@ -5,7 +5,8 @@
 #    function (x, ...)
 #        if (is.mcmc.list(x)) x else mcmc.list(x))
 as.mcmc.list <- function (x, ...)
-        if (is.mcmc.list(x)) x else mcmc.list(x))
+        if (is.mcmc.list(x)) x else mcmc.list(x)
+## S3method(as.mcmc.list, default)
 
 ## ---------------------
 ## methods with generic defined in base
