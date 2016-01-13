@@ -211,8 +211,10 @@ setMethod("stack", "codaMCMC", function(x, ...) {
 
 ## this displays a compact structure (without detailed dctable)
 #setGeneric("str", function(object, ...) standardGeneric("str"))
+#setMethod("str", "dcmle", function(object, max.level=5L, ...)
+#    str(as(object, "MCMClist"), max.level=max.level, ...))
 setMethod("str", "dcmle", function(object, max.level=5L, ...)
-    str(as(object, "MCMClist"), max.level=max.level, ...))
+    str(object, max.level=max.level, ...))
 setMethod("str", "dcCodaMCMC", function(object, max.level=3L, ...)
     str(as(object, "MCMClist"), max.level=max.level, ...))
 
