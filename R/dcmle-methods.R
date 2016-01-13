@@ -161,10 +161,10 @@ setMethod("time", "codaMCMC", function(x, ...) {
 })
 
 setMethod("window", "dcmle", function(x, ...) {
-    as(window(as(x, "mcmc.list"), ...), "dcmle")
+    as(window(as(x, "MCMClist"), ...), "dcmle")
 })
 setMethod("window", "codaMCMC", function(x, ...) {
-    as(window(as(x, "mcmc.list"), ...), "codaMCMC")
+    as(window(as(x, "MCMClist"), ...), "codaMCMC")
 })
 
 ## no update for codaMCMC/dcCodaMCMC
@@ -473,7 +473,7 @@ setMethod("heidel.diag", "dcmle", function(x, ...)
 #setGeneric("autocorr.diag", function(mcmc.obj, ...)
 #    standardGeneric("autocorr.diag"))
 setMethod("autocorr.diag", "MCMClist", function(mcmc.obj, ...)
-    autocorr.diag(as(mcmc.obj, "mcmc.list"), ...))
+    coda::autocorr.diag(as(mcmc.obj, "mcmc.list"), ...))
 setMethod("autocorr.diag", "codaMCMC", function(mcmc.obj, ...)
     autocorr.diag(as(mcmc.obj, "MCMClist"), ...))
 setMethod("autocorr.diag", "dcmle", function(mcmc.obj, ...)
