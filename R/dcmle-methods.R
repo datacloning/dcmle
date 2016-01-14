@@ -169,8 +169,8 @@ setMethod("window", "codaMCMC", function(x, ...) {
 
 ## no update for codaMCMC/dcCodaMCMC
 setMethod("update", "dcmle", function (object, ..., evaluate = TRUE) {
-    .local <- function (object, ..., evaluate = TRUE)
-    {
+#    .local <- function (object, ..., evaluate = TRUE)
+#    {
         call <- object@call
         extras <- match.call(expand.dots = FALSE)$...
         if (length(extras)) {
@@ -184,8 +184,8 @@ setMethod("update", "dcmle", function (object, ..., evaluate = TRUE) {
         if (evaluate)
             eval(call, parent.frame())
         else call
-    }
-    .local(object, ..., evaluate = evaluate)
+#    }
+#    .local(object, ..., evaluate = evaluate)
 })
 
 ## ---------------------
