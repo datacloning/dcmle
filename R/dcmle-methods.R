@@ -168,7 +168,7 @@ setMethod("window", "codaMCMC", function(x, ...) {
 })
 
 ## no update for codaMCMC/dcCodaMCMC
-setMethod("update", "dcmle", function (object, ...) {
+setMethod("update", "dcmle", function (object, ..., evaluate = TRUE) {
     .local <- function (object, ..., evaluate = TRUE)
     {
         call <- object@call
@@ -185,7 +185,7 @@ setMethod("update", "dcmle", function (object, ...) {
             eval(call, parent.frame())
         else call
     }
-    .local(object, ...)
+    .local(object, ..., evaluate = evaluate)
 })
 
 ## ---------------------
