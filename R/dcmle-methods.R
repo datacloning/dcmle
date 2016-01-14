@@ -169,23 +169,21 @@ setMethod("window", "codaMCMC", function(x, ...) {
 
 ## no update for codaMCMC/dcCodaMCMC
 setMethod("update", "dcmle", function (object, ..., evaluate = TRUE) {
-#    .local <- function (object, ..., evaluate = TRUE)
-#    {
-        call <- object@call
-        extras <- match.call(expand.dots = FALSE)$...
-        if (length(extras)) {
-            existing <- !is.na(match(names(extras), names(call)))
-            for (a in names(extras)[existing]) call[[a]] <- extras[[a]]
-            if (any(!existing)) {
-                call <- c(as.list(call), extras[!existing])
-                call <- as.call(call)
-            }
+    call <- object@call
+    extras <- match.call(expand.dots = FALSE)$...
+    if (length(extras)) {
+        existing <- !is.na(match(names(extras), names(call)))
+        for (a in names(extras)[existing]) call[[a]] <- extras[[a]]
+        if (any(!existing)) {
+            call <- c(as.list(call), extras[!existing])
+            call <- as.call(call)
         }
-        if (evaluate)
-            eval(call, parent.frame())
-        else call
-#    }
-#    .local(object, ..., evaluate = evaluate)
+    }
+    if (evaluate) {
+        out <- eval(call, parent.frame())
+        out@call <- call
+        out
+    } else call
 })
 
 ## ---------------------
