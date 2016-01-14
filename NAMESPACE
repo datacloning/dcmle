@@ -6,7 +6,7 @@ exportMethods(
     "acfplot",
     "as.array",
     "as.matrix",
-    #"as.mcmc.list",
+    "as.mcmc.list",
     "autocorr.diag",
     "chanames",
     "chisq.diag",
@@ -49,6 +49,7 @@ exportMethods(
     "traceplot",
     "update",
     "varnames",
+    "varnames<-",
     "vcov",
     "window",
     "xyplot"
