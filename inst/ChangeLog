@@ -7,6 +7,8 @@
     * Fixing import issue with coda::as.mcmc.list generic.
       The coda:::as.mcmc.list.default is replicated
       as the internal .as_mcmc_list_default function.
+    * Fixing update method for dcmle class: R-devel gave NOTE,
+      call was not properly updated in return object.
     * dcexample function is defunct.
       The R-Forge example repo is moved to:
       https://github.com/datacloning/dcexamples

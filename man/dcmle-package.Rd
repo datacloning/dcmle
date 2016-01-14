@@ -35,7 +35,7 @@ Forum: \url{https://groups.google.com/forum/#!forum/dclone-users}
 
 Issues: \url{https://github.com/datacloning/dcmle/issues}
 
-Datacloning website: \url{http://datacloning.org}
+Data cloning website: \url{http://datacloning.org}
 }
 \keyword{ package }
 \seealso{
@@ -79,7 +79,7 @@ makeDcFit(
   unchanged = "n",
   params <- c("lambda","beta","sigma"))
 }
-## S4 class 'bevholtMle' extends the 'dcMle' class
+## S4 class 'bevholtMle' extends the 'dcmle' class
 ## it can have additional slots
 setClass("bevholtMle", 
     representation(y="numeric", title="character"), 
