@@ -32,10 +32,10 @@ str(as(as(regmod, "dcCodaMCMC"), "codaMCMC"))
 str(as(as(regmod, "dcCodaMCMC"), "dcCodaMCMC"))
 str(as(as(regmod, "dcCodaMCMC"), "dcmle"))
 
-str(as.mcmc.list(regmod, "MCMClist"))
-str(as.mcmc.list(regmod, "codaMCMC"))
-str(as.mcmc.list(regmod, "dcCodaMCMC"))
-str(as.mcmc.list(regmod, "dcmle"))
+str(as(as(regmod, "dcmle"), "MCMClist"))
+str(as(as(regmod, "dcmle"), "codaMCMC"))
+str(as(as(regmod, "dcmle"), "dcCodaMCMC"))
+str(as(as(regmod, "dcmle"), "dcmle"))
 
 ## testing plot methods
 
