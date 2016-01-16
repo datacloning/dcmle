@@ -213,8 +213,10 @@ setMethod("stack", "codaMCMC", function(x, ...) {
 #    str(as(object, "MCMClist"), max.level=max.level, ...))
 setMethod("str", "dcmle", function(object, max.level=5L, ...)
     utils::str(object, max.level=max.level, ...))
+#setMethod("str", "dcCodaMCMC", function(object, max.level=3L, ...)
+#    str(as(object, "MCMClist"), max.level=max.level, ...))
 setMethod("str", "dcCodaMCMC", function(object, max.level=3L, ...)
-    str(as(object, "MCMClist"), max.level=max.level, ...))
+    utils::str(object, max.level=max.level, ...))
 
 setMethod("head", "dcmle", function(x, ...)
     head(as(x, "MCMClist"), ...))
