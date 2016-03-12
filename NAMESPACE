@@ -145,7 +145,7 @@ importFrom(dclone,
        parallel.inits,
        mclapplySB,
        evalParallelArgument,
-       parDose)
+       parDosa)
 importFrom(coda,
        as.mcmc.list,
        mcmc,
