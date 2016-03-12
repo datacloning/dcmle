@@ -5,6 +5,7 @@
     * str method for dcCodaMCMC class confusingly parsed the object
       as and mcmc.list (MCMClist) object. The true S4 nature of the
       object is now revealed (show method also relies on str).
+    * snowWrapper in dclone is now deprecated, NAMESPACE reflects this.
 
 ## Version 0.3-0, Jan 12, 2016
 
