@@ -35,7 +35,7 @@ Forum: \url{https://groups.google.com/forum/#!forum/dclone-users}
 
 Issues: \url{https://github.com/datacloning/dcmle/issues}
 
-Data cloning website: \url{http://datacloning.org}
+Data cloning website: \url{https://datacloning.org}
 }
 \keyword{ package }
 \seealso{

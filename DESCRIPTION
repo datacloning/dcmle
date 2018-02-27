@@ -14,6 +14,6 @@ Imports: coda, methods, stats4, lattice
 Suggests: MASS, parallel, rjags
 SystemRequirements: JAGS (>= 3.0.0)
 URL: https://groups.google.com/forum/#!forum/dclone-users,
-    http://datacloning.org
+    https://datacloning.org
 LazyLoad: yes
 LazyData: true
