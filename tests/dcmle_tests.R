@@ -37,7 +37,7 @@ str(as(as(regmod, "dcmle"), "codaMCMC"))
 str(as(as(regmod, "dcmle"), "dcCodaMCMC"))
 str(as(as(regmod, "dcmle"), "dcmle"))
 
-## testing plot methods
+## testing methods
 
 regmod_MCMClist <- as(regmod, "MCMClist")
 regmod_codaMCMC <- as(regmod, "codaMCMC")
@@ -136,7 +136,10 @@ toEval <- c("plot",
   "gelman.diag",
   "geweke.diag",
   "raftery.diag",
-  "heidel.diag")
+  "heidel.diag",
+  "cumuplot",
+  "HPDinterval",
+  "rejectionRate")
 
 res <- list()
 for (i in toEval) {

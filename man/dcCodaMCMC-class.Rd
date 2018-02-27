@@ -19,7 +19,7 @@
 
 \title{Class \code{"dcCodaMCMC"}}
 \description{
-An S4 representation of an mcmc.lits object of the \pkg{coda} package,
+An S4 representation of an mcmc.list object of the \pkg{coda} package,
 with data cloning attributes from \pkg{dclone} package
 (the mcmc.list.dc class).
 }
