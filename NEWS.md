@@ -1,6 +1,6 @@
 # dcmle package version history
 
-## Version 0.3-2, Feb 26, 2018
+## Version 0.4-0, Feb 26, 2018
 
 * Spell checks.
 * More coda methods added: cumuplot, HPDinterval, rejectionRate.
@@ -30,7 +30,7 @@
 * Reference for .GlobalEnv replaced by parent.frame() in
   sourceDcExample, also the assign.global argument is no
   longer used. The envir argument can be set instead.
-  No assignement is made when envir=NULL.
+  No assignment is made when envir=NULL.
 * gelman.plot generic documentation added.
 * dcmle: reflects changes in dclone due to addition of
   bugs.parfit and all partypes in dc.parfit.
