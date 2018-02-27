@@ -7,7 +7,21 @@ before_install:
   - sudo apt-get update -q
   - sudo apt-get install r-cran-rjags -y
 
+env:
+  global:
+    - _R_CHECK_FORCE_SUGGESTS_=false
+
+branches:
+  only:
+    - master
+
+r_packages:
+  - covr
+
 r:
   - release
   - devel
   - oldrel
+
+after_success:
+  - Rscript -e 'library(covr);codecov()'
