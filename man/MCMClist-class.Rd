@@ -30,6 +30,7 @@
 \alias{traceplot,MCMClist-method}
 \alias{varnames,MCMClist-method}
 \alias{xyplot,MCMClist-method}
+\alias{cumuplot,MCMClist-method}
 
 \title{Class \code{"MCMClist"}}
 \description{
@@ -51,6 +52,7 @@ Virtual class for S3 mcmc.list object from \pkg{coda} package.
     \item{confint}{\code{signature(object = "MCMClist")}: ... }
     \item{crosscorr.plot}{\code{signature(x = "MCMClist")}: ... }
     \item{crosscorr}{\code{signature(x = "MCMClist")}: ... }
+    \item{cumuplot}{\code{signature(x = "MCMClist")}: ... }
     \item{densityplot}{\code{signature(x = "MCMClist")}: ... }
     \item{densplot}{\code{signature(x = "MCMClist")}: ... }
     \item{frequency}{\code{signature(x = "MCMClist")}: ... }

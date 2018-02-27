@@ -56,6 +56,7 @@
 \alias{vcov,dcmle-method}
 \alias{window,dcmle-method}
 \alias{xyplot,dcmle-method}
+\alias{cumuplot,dcmle-method}
 
 \title{Class \code{"dcmle"}}
 \description{
@@ -63,7 +64,7 @@ Fitted model object from \code{\link{dcmle}}.
 }
 \section{Objects from the Class}{
 Objects can be created by calls of the form \code{new("dcmle", ...)}.
-%%  ~~ describe objects here ~~ 
+%%  ~~ describe objects here ~~
 }
 \section{Slots}{
   \describe{
@@ -102,6 +103,7 @@ Objects can be created by calls of the form \code{new("dcmle", ...)}.
     \item{confint}{\code{signature(object = "dcmle")}: ... }
     \item{crosscorr.plot}{\code{signature(x = "dcmle")}: ... }
     \item{crosscorr}{\code{signature(x = "dcmle")}: ... }
+    \item{cumuplot}{\code{signature(x = "dcmle")}: ... }
     \item{dcdiag}{\code{signature(x = "dcmle")}: ... }
     \item{dcsd}{\code{signature(object = "dcmle")}: ... }
     \item{dctable}{\code{signature(x = "dcmle")}: ... }

@@ -3,6 +3,7 @@
 ## Version 0.3-2, Feb 26, 2018
 
 * Spell checks.
+* More coda methods added: cumuplot, HPDinterval, rejectionRate.
 
 ## Version 0.3-1, Jan 14, 2016
 
@@ -24,7 +25,7 @@
   The R-Forge example repo is moved to:
   https://github.com/datacloning/dcexamples
 
-## Version 0.2-4, Sept 27, 2013
+## Version 0.2-4, Sep 27, 2013
 
 * Reference for .GlobalEnv replaced by parent.frame() in
   sourceDcExample, also the assign.global argument is no
@@ -39,12 +40,12 @@
 * Removed ::: to satisfy R 3.0.2 check.
 * snow is not suggested in DESCRIPTION.
 
-## Version 0.2-3, March 1, 2013
+## Version 0.2-3, Mar 1, 2013
 
 * gsFit: gained flavour argument.
 * gelman.plot: now implemented for dcmle classes as generic.
 
-## Version 0.2-2, July 6, 2012
+## Version 0.2-2, Jul 6, 2012
 
 * Inverse coercion methods (as.mcmc.list) failed with nvar=1 cases,
   it is now fixed.
@@ -54,14 +55,14 @@
 * Depends: R (>= 2.15.0). Old versions of R failed under MacOS
   and Windows (reported by Uwe Ligges).
 
-## Version 0.2-0, April 27, 2012
+## Version 0.2-0, Apr 27, 2012
 
 * Complete rework of the package internals, no user visible
   changes (except for coda type methods are now available
   without extra as.mcmc.list coercion, including plots).
 * dcmle class replaces dcMle, new classes and methods added.
 
-## Version 0.1-6, March 22, 2012
+## Version 0.1-6, Mar 22, 2012
 
 * dcmle: cl=1 is now acceptable (defaults to NULL).
   Note that this behaviour is different from that is in dclone.
@@ -97,12 +98,12 @@
   when cl=NULL and mc.cores > 1. This allows
   forking to happen automatically via the global option.
 
-## Version 0.1-1, Sept 29, 2011
+## Version 0.1-1, Sep 29, 2011
 
 * dcExample, sourceDcExample, listDcExample: new
   functions added to deal with examples from R-Forge.
 
-## Version 0.1-0, Sept 27, 2011
+## Version 0.1-0, Sep 27, 2011
 
 * main functions, classes, methods work
 * dependencies and namespace figured out

@@ -53,6 +53,7 @@
 \alias{vcov,codaMCMC-method}
 \alias{window,codaMCMC-method}
 \alias{xyplot,codaMCMC-method}
+\alias{cumuplot,codaMCMC-method}
 
 \title{Class \code{"codaMCMC"}}
 \description{
@@ -101,6 +102,7 @@ Objects can be created by calls of the form \code{new("codaMCMC", ...)}.
     \item{confint}{\code{signature(object = "codaMCMC")}: ... }
     \item{crosscorr.plot}{\code{signature(x = "codaMCMC")}: ... }
     \item{crosscorr}{\code{signature(x = "codaMCMC")}: ... }
+    \item{cumuplot}{\code{signature(x = "codaMCMC")}: ... }
     \item{dcdiag}{\code{signature(x = "codaMCMC")}: ... }
     \item{dcsd}{\code{signature(object = "codaMCMC")}: ... }
     \item{dctable}{\code{signature(x = "codaMCMC")}: ... }
