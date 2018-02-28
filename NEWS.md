@@ -4,6 +4,7 @@
 
 * Spell checks.
 * More coda methods added: cumuplot, HPDinterval, rejectionRate.
+* Addin Stan support.
 
 ## Version 0.3-1, Jan 14, 2016
 
