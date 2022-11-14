@@ -66,9 +66,9 @@ dcmle <- function(x, params, n.clones=1, cl=NULL, nobs, ...) {
         }
         if (FLAVOUR == "stan") {
             out <- if (is.null(cl)) {
-                stan.fit(dat, params, model, inits, ...)
+                dclone::stan.fit(dat, params, model, inits, ...)
             } else {
-                stan.parfit(cl, dat, params, model, inits, ...)
+                dclone::stan.parfit(cl, dat, params, model, inits, ...)
             }
         }
     ## iterative model fit
