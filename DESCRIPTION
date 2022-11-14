@@ -2,7 +2,7 @@ Package: dcmle
 Type: Package
 Title: Hierarchical Models Made Easy with Data Cloning
 Version: 0.4-0
-Date: 2018-02-26
+Date: 2022-11-14
 Author: Peter Solymos
 Maintainer: Peter Solymos <solymos@ualberta.ca>
 Description: S4 classes around infrastructure provided by the
@@ -14,6 +14,8 @@ Imports: coda, methods, stats4, lattice
 Suggests: MASS, parallel, rjags
 SystemRequirements: JAGS (>= 3.0.0)
 URL: https://groups.google.com/forum/#!forum/dclone-users,
-    https://datacloning.org
+    https://datacloning.org,
+    https://github.com/datacloning/dcmle
+BugReports: https://github.com/datacloning/dcmle/issues
 LazyLoad: yes
 LazyData: true
