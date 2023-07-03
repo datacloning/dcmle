@@ -1,8 +1,7 @@
 # dcmle: Hierarchical Models Made Easy with Data Cloning
 
-[![CRAN version](http://www.r-pkg.org/badges/version/dcmle)](http://cran.rstudio.com/web/packages/dcmle/index.html)
-[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/grand-total/dcmle)](http://www.rdocumentation.org/packages/dcmle)
-[![Linux build status](https://travis-ci.org/datacloning/dcmle.svg?branch=master)](https://travis-ci.org/datacloning/dcmle)
+[![CRAN version](https://www.r-pkg.org/badges/version/dcmle)](https://CRAN.R-project.org/package=dcmle)
+[![CRAN RStudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/dcmle)](https://www.rdocumentation.org/packages/dcmle/)
 
 S4 classes around infrastructure
 provided by the 
@@ -13,7 +12,7 @@ models easy as a breeze.
 
 Sequential and parallel MCMC support
 for JAGS, WinBUGS, OpenBUGS, and Stan.
-See Solymos 2010 ([R Journal 2(2):29--37](http://journal.r-project.org/archive/2010-2/RJournal_2010-2_Solymos.pdf)).
+See Solymos 2010 ([R Journal 2(2):29--37](https://journal.r-project.org/archive/2010-2/RJournal_2010-2_Solymos.pdf)).
 
 ## Versions
 
