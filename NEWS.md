@@ -1,10 +1,10 @@
 # dcmle package version history
 
-## Version 0.4-0, Feb 26, 2018
+## Version 0.4-0, July 3, 2023
 
 * Spell checks.
 * More coda methods added: cumuplot, HPDinterval, rejectionRate.
-* Addin Stan support.
+* Added Stan support.
 
 ## Version 0.3-1, Jan 14, 2016
 

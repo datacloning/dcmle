@@ -63,7 +63,7 @@ mixed models using data cloning.
 \strong{105}, 1617--1625.
 }
 \author{
-Peter Solymos, \email{solymos@ualberta.ca}
+Peter Solymos
 }
 \seealso{
 For additional arguments:
