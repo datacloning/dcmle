@@ -58,7 +58,7 @@ if required.
 \code{makeDcFit} returns a 'dcFit' object (\link{dcFit-class}).
 }
 \author{
-Peter Solymos <solymos@ualberta.ca>
+Peter Solymos
 }
 \seealso{
 \link{gsFit-class}, \link{dcFit-class}, \code{\link{dcmle}}

@@ -28,7 +28,7 @@ specific models to the data (see Examples).
 \author{
 Peter Solymos
 
-Maintainer: Peter Solymos <solymos@ualberta.ca>
+Maintainer: Peter Solymos <psolymos@gmail.com>
 }
 \references{
 Forum: \url{https://groups.google.com/forum/#!forum/dclone-users}

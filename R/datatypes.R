@@ -9,7 +9,7 @@ setClassUnion("dcInits", c("NULL", "list", "function"))
 setClassUnion("dcModel", c("function", "character", "custommodel"))
 
 ## data/model templates
-setClass("gsFit", 
+setClass("gsFit",
     representation(
         data = "list",
         model = "dcModel",
@@ -45,7 +45,7 @@ setClass("dcFit",
 #})
 
 ## creator function for gsFit
-makeGsFit <- 
+makeGsFit <-
 function(data, model, params=NULL, inits=NULL, flavour)
 {
     if (missing(flavour))
@@ -58,7 +58,7 @@ function(data, model, params=NULL, inits=NULL, flavour)
         flavour = flavour)
 }
 ## creator function for dcFit
-makeDcFit <- 
+makeDcFit <-
 function(data, model, params=NULL, inits=NULL,
 multiply=NULL, unchanged=NULL, update=NULL,
 updatefun=NULL, initsfun=NULL, flavour)

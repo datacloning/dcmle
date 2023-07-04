@@ -5,7 +5,7 @@
 ## wrapper function
 ## calls the interal .dcmle function and coerces to dcmle S4 class
 dcmle <- function(x, params, n.clones=1, cl=NULL, nobs, ...) {
-    out <- as(dcmle::.dcmle(x=x, params=params,
+    out <- as(.dcmle(x=x, params=params,
         n.clones=n.clones, cl=cl, nobs=nobs, ...), "dcmle")
     out@call <- match.call()
     if (!missing(nobs))
@@ -13,7 +13,7 @@ dcmle <- function(x, params, n.clones=1, cl=NULL, nobs, ...) {
     out
 }
 ## internal workhorse returning S3 mcmc.list object
-## this still has updated.model just in case...
+## this still has updated.model/stan.model just in case
 .dcmle <- function(x, params, n.clones=1, cl=NULL, nobs, ...) {
     ## get defaults right for cl argument
     if (!is.null(cl) && !missing(cl))
@@ -29,16 +29,9 @@ dcmle <- function(x, params, n.clones=1, cl=NULL, nobs, ...) {
         stop("'params' must be provided")
     ## make a copy of input model
     model <- x@model
-    ## single model
     FLAVOUR <- x@flavour
-    if (FLAVOUR != "jags") {
-        if (FLAVOUR == "bugs") {
-            PROGRAM <- "winbugs"
-        } else {
-            PROGRAM <- FLAVOUR
-            FLAVOUR <- "bugs"
-        }
-    }
+    if (!(FLAVOUR %in% c("jags", "bugs", "stan")))
+        stop("flavour must be one of 'jags', 'bugs', or 'stan', see ?dc.fit")
     if (length(n.clones) == 1) {
         ## make a copy of input inits
         inits <- x@inits
@@ -61,65 +54,45 @@ dcmle <- function(x, params, n.clones=1, cl=NULL, nobs, ...) {
             out <- if (is.null(cl)) {
                 jags.fit(dat, params, model, inits, ...)
             } else {
-                jags.parfit(cl, dat, params, x@model, inits, ...)
+                jags.parfit(cl, dat, params, model, inits, ...)
             }
-        } else {
+        }
+        if (FLAVOUR == "bugs") {
             out <- if (is.null(cl)) {
-                bugs.fit(dat, params, model, inits,
-                    program=PROGRAM, ...)
+                bugs.fit(dat, params, model, inits, ...)
             } else {
-                bugs.parfit(cl, dat, params, model, inits,
-                    program=PROGRAM, ...)
+                bugs.parfit(cl, dat, params, model, inits, ...)
+            }
+        }
+        if (FLAVOUR == "stan") {
+            out <- if (is.null(cl)) {
+                dclone::stan.fit(dat, params, model, inits, ...)
+            } else {
+                dclone::stan.parfit(cl, dat, params, model, inits, ...)
             }
         }
     ## iterative model fit
     } else {
-        if (FLAVOUR == "jags") {
-            ## sequential execution
-            if (is.null(cl)) {
-                out <- dc.fit(x@data, params, model, x@inits,
-                    n.clones = n.clones,
-                    multiply = x@multiply,
-                    unchanged = x@unchanged,
-                    update = x@update,
-                    updatefun = x@updatefun,
-                    initsfun = x@initsfun,
-                    flavour = FLAVOUR, ...)
-            ## parallel execution
-            } else {
-                out <- dc.parfit(cl, x@data, params, model, x@inits,
-                    n.clones = n.clones,
-                    multiply = x@multiply,
-                    unchanged = x@unchanged,
-                    update = x@update,
-                    updatefun = x@updatefun,
-                    initsfun = x@initsfun,
-                    flavour = FLAVOUR, ...)
-            }
+        ## sequential execution
+        if (is.null(cl)) {
+            out <- dc.fit(x@data, params, model, x@inits,
+                n.clones = n.clones,
+                multiply = x@multiply,
+                unchanged = x@unchanged,
+                update = x@update,
+                updatefun = x@updatefun,
+                initsfun = x@initsfun,
+                flavour = FLAVOUR, ...)
+        ## parallel execution
         } else {
-            ## sequential execution
-            if (is.null(cl)) {
-                out <- dc.fit(x@data, params, model, x@inits,
-                    n.clones = n.clones,
-                    multiply = x@multiply,
-                    unchanged = x@unchanged,
-                    update = x@update,
-                    updatefun = x@updatefun,
-                    initsfun = x@initsfun,
-                    flavour = FLAVOUR,
-                    program = PROGRAM, ...)
-            ## parallel execution
-            } else {
-                out <- dc.parfit(cl, x@data, params, model, x@inits,
-                    n.clones = n.clones,
-                    multiply = x@multiply,
-                    unchanged = x@unchanged,
-                    update = x@update,
-                    updatefun = x@updatefun,
-                    initsfun = x@initsfun,
-                    flavour = FLAVOUR,
-                    program = PROGRAM, ...)
-            }
+            out <- dc.parfit(cl, x@data, params, model, x@inits,
+                n.clones = n.clones,
+                multiply = x@multiply,
+                unchanged = x@unchanged,
+                update = x@update,
+                updatefun = x@updatefun,
+                initsfun = x@initsfun,
+                flavour = FLAVOUR, ...)
         }
     }
     out
