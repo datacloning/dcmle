@@ -1,5 +1,10 @@
 # dcmle package version history
 
+## Version 0.4-1, July 4, 2023
+
+* Removing undocumented .dcmle internal function from NAMESPACE
+  after failed CRAN checks.
+
 ## Version 0.4-0, July 3, 2023
 
 * Spell checks.

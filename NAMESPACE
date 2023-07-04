@@ -1,5 +1,4 @@
 export(dcmle,
-    .dcmle,
     makeGsFit,
     makeDcFit)
 exportMethods(

@@ -1,8 +1,8 @@
 Package: dcmle
 Type: Package
 Title: Hierarchical Models Made Easy with Data Cloning
-Version: 0.4-0
-Date: 2023-07-03
+Version: 0.4-1
+Date: 2023-07-04
 Author: Peter Solymos
 Maintainer: Peter Solymos <psolymos@gmail.com>
 Description: S4 classes around infrastructure provided by the
@@ -18,4 +18,3 @@ URL: https://groups.google.com/forum/#!forum/dclone-users,
     https://github.com/datacloning/dcmle
 BugReports: https://github.com/datacloning/dcmle/issues
 LazyLoad: yes
-LazyData: true
