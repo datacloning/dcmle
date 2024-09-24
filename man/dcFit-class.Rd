@@ -28,7 +28,7 @@ Objects can be created by calls of the form \code{new("dcFit", ...)}.
         default is \code{"jags"}.
         It can also be \code{"winbugs"},
         \code{"openbugs"}, or \code{"brugs"} referring to
-        the \code{argument} of \code{\link{bugs.fit}},
+        the \code{argument} of \code{\link[dclone]{bugs.fit}},
         in which case \code{flavour} will be treated as \code{"bugs"}.}
     \item{\code{data}:}{Object of class \code{"list"},
         same as corresponding \code{\link[dclone]{dc.fit}} argument.}
