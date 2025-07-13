@@ -1,5 +1,10 @@
 # dcmle package version history
 
+## Version 0.4-2, July 12, 2025
+
+* Use Authors@R field in DESCRIPTION.
+* Fix documentation.
+
 ## Version 0.4-1, July 4, 2023
 
 * Removing undocumented .dcmle internal function from NAMESPACE
